@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="app/css/media-query.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+
+    <script src="bower_components/angular/angular.js"></script>
+
+    <script src="app/js/delta-config.js"></script>
+    <script src="app/js/controller/index-controller3.js"></script>
+</head>
+<body ng-app="delta">
+<div ng-controller="IndexController3" class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Cadastro de Pessoa</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" placeholder="Nome" title="Nome"
+                               ng-model="entidade.nome">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Sobrenome</label>
+                        <input type="text" class="form-control" placeholder="Sobrenome" title="Sobrenome"
+                               ng-model="entidade.sobrenome">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Nascimento</label>
+                        <input type="date" class="form-control" placeholder="Nascimento" title="Nascimento"
+                               ng-model="entidade.nascimento">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Nascimento</th>
+                        </tr>
+                        <tr ng-repeat="pessoa in listaDePessoas">
+                            <td ng-bind="::pessoa.nome"></td>
+                            <td ng-bind="::pessoa.sobrenome"></td>
+                            <td ng-bind="::pessoa.nascimento"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-default" ng-click="salvar()">
+                            <i class="fa fa-save"></i>
+                            Salvar
+                        </button>
+                        <button type="submit" class="btn btn-default" ng-click="limpar()">
+                            <i class="fa fa-eraser"></i>
+                            Limpar
+                        </button>
+                        <button type="submit" class="btn btn-default">
+                            <i class="fa fa-trash-o"></i>
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
